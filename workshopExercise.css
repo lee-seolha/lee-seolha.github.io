@@ -1,3 +1,6 @@
 body {
   background-color: Lavender;
 }
+#trendsGraph-container {
+    height: 400px;
+}
