@@ -13,8 +13,11 @@
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/sonification.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
- <script src="trendsGraph.js"></script>
-
+<script>
+    var script = document.createElement('script');
+    script.src = 'trendsGraph.js';
+    document.body.appendChild(script);
+</script>
 <figure class="trendsGraph">
   <div id="top">
     <div id="title">
@@ -27,7 +30,7 @@
     Press spacebar to play and pause chart. Use arrow keys to navigate back and forth and between lines. Use Home/End to go to the beginning and end of a series. Press Esc to silence all audio and reset the chart.
     </div>
     <div id="trendsGraph-container"></div>
-    <p class="trendsGraph-description">This trends graph shows how the word frequencies of words change throughout the book. This graph incorporates the sonification, keyboard navigation features. Click "Play Chart" to get started and enable the keyboard navigation.</p>
+        <p class="trendsGraph-description">This trends graph shows how the word frequencies of words change throughout the book. This graph incorporates the sonification, keyboard navigation features. Click "Play Chart" to get started and enable the keyboard navigation.</p>
 </figure>
 
 </html>
