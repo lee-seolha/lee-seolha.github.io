@@ -386,7 +386,10 @@ const chart = Highcharts.chart('trendsGraph-container', {
     }
   },
   "subtitle": {
-    "text": "William Wordsworth, The Prelude 1805"
+    "text": "William Wordsworth, The Prelude 1805",
+    "style": {
+      "fontSize": "20px",
+    }
   }
 });
 
