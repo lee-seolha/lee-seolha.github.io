@@ -8,7 +8,7 @@ Anyways, to summarize what I've been doing (so I won't forget again and sift thr
 
 I was trying to apply this theme from https://github.com/abhn/Elementary?tab=readme-ov-file.
 That led me to installing Jekyll on my computer and "building" a Jekyll site, specifically "myblog" (I used the Command Prompt as part of the installation, but I still don't really understand why/how they work. I just wish somebody could explain all to me in laymen language.) For this, I used this guides: https://jekyllrb.com/docs/. And revisitng the website just now, I realized that they also had "Step by Step Tutorial" https://jekyllrb.com/docs/step-by-step/01-setup/. Hmm.. Well, I'm already using another guide...
-Without figuring out what to do with the myblog or bundle and stuff, I found another guide and am creating this post based on the guide: https://jmcglone.com/guides/github-pages/
+Without figuring out what to do with the myblog or bundler, Ruby, and stuff, I found another guide and am creating this post based on the guide: https://jmcglone.com/guides/github-pages/
 
 Notes:
 *some important terms: {{liquid tags}} ex. {{title}} {{contents}} (liquid because where the the tag is where whatever I enter as its content will be contained and "laid out" according to the basic layout. 
