@@ -1,6 +1,38 @@
 name: Seolha Lee
+title: Seolha Lee's Website
+
+markdown: kramdown
+highlighter: rouge
+javascript_enabled: true
+
+theme: elementary
+exclude:
+  - ./elementary
+plugins:
+  - jekyll-sitemap
+sass:
+  sass_dir: _sass
+  style: compressed
+
+
 collections:
-  posts:
+  news:
+    title: News
+    default_open: false
     output: true
-    permalink: /blog/:year/:month/:day/:title/
-    source: blog/_posts
+  posts:
+    title: Posts
+    default_open: true
+    output: true
+
+defaults:
+  - scope:
+      type: posts
+    values:
+      title: Posts
+      permalink: /post/:title
+  - scope:
+      type: news
+    values:
+      title: News
+      permalink: /news/:title

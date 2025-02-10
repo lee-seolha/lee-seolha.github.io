@@ -8,7 +8,7 @@ Anyways, to summarize what I've been doing (so I won't forget again and sift thr
 
 I was trying to apply this theme from https://github.com/abhn/Elementary?tab=readme-ov-file.
 That led me to installing Jekyll on my computer and "building" a Jekyll site, specifically "myblog" (I used the Command Prompt as part of the installation, but I still don't really understand why/how they work. I just wish somebody could explain all to me in laymen language.) For this, I used this guides: https://jekyllrb.com/docs/. And revisitng the website just now, I realized that they also had "Step by Step Tutorial" https://jekyllrb.com/docs/step-by-step/01-setup/. Hmm.. Well, I'm already using another guide...
-Without figuring out what to do with the myblog or bundler, Ruby, and stuff, I found another guide and am creating this post based on the guide: https://jmcglone.com/guides/github-pages/
+Without figuring out what to do with the myblog or bundler, Ruby, and stuff, I found another guide and am creating this post based on the guide (https://jmcglone.com/guides/github-pages/).
 
 Updated: Okay, I am about to explode with all the new information and get more and more confused. So, I deleted all the local Jekyll stuff like myblog, ruby, and bundler, and just stick to the instruction on jmcglone for now; this tutorial builds Jekyll right into the GitHub repo using the Github web interface and I don't have to set up anything on my computer. (By the way, this "first post" is showing me 404 error and I don't know what's wrong hahahahaha (Why am I doing this to myself? hahahahahahaha  *laughing frantically*)
 
