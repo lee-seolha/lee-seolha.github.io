@@ -4,3 +4,4 @@ collections:
     output: true
     permalink: /blog/:year/:month/:day/:title/
     source: blog/_posts
+theme: elementary
