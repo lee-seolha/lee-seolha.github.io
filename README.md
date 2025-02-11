@@ -6,7 +6,7 @@ Welcome to my online portfolio! This website showcases my projects in British Ro
 
 * Use the navigation bar at the top to access different sections of the website.
 * Click on project titles to view more information and details. 
-* Feel free to reach out at seolhalee@tamu.edu if you have any questions or suggestions for improvements, or collaboration!
+* Feel free to reach out at seolhalee@tamu.edu if you have any questions or suggestions for improvements or collaboration!
 
 ## Disclaimer:
 Please read the following statement from Github on Data collection (https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages)
