@@ -26,6 +26,9 @@ jobs:
         gem install bundler
         bundle install
 
+    - name: Copy theme directory
+      run: cp -r elementary /github/workspace/elementary
+
     - name: Build site
       run: bundle exec jekyll build
 
