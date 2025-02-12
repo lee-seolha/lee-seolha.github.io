@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Kaiju Name</title>
+    <script>
+        var prefixes = ["무환마인", "우주닌자", "고대괴수", "우주로봇", "울트라맨", "환각우주인", "우주괴수", "사악신", "서성괴수", "허공괴수", "우호진수", "울트라맨", "코인괴수", "악질우주인", "폭군괴수", "이블", "우주대괴수", "삼면괴인", "완전생명체", "우주검호", "해골괴수", "최강합체수", "우주공룡", "미아진수", "고대괴수", "망령괴수", "다크", "암흑우주대황제", "지옥성인", "일각초수", "유괴괴인", "미나토", "기수", "전뇌마신", "염마전사", "우호거조", "이차원괴수", "합체", "시빌", "캡슐괴수", "근원파멸천사", "암흑용사", "화산괴조", "이차원", "요려전사", "은하황제", "앱솔루트", "염마전사", "무쌍철신", "전뇌괴수", "원반생물", "섬멸기갑수", "초고대괴수", "쾌수", "암흑성인", "캡슐괴수", "울트라맨", "안드로이드소녀", "운석괴수", "캡슐괴수", "분신우주인", "오일괴수", "전차괴수", "이그니스", "다크", "페갓사", "이즈마엘", "목도리괴수", "궁극초수", "강력투사", "4차원괴수", "미츠루기", "이블", "경호원괴수", "초합체괴수", "지제대괴수", "더", "재생괴수", "빛괴수", "원반생물", "냉동괴수", "다크", "자력괴수", "우호진수", "캡슐괴수", "후쿠이데", "대마왕수", "카오스", "사벨폭군", "파멸마인", "지저괴수", "거대어괴수", "해적우주인", "우주닌자", "애증전사", "초고대당견괴수", "흉악우주인", "소우야", "극악우주인"];
+        var suffixes = ["Ⅱ", "갤럭트론", "고모라", "다크", "베리알", "사우르스", "성수", "성인", "성인(2대)", "에레킹에이스킬러", "오브몬스", "저글러", "젯톤", "젯돈", "캘러미티", "페가"];
+        var newName = "";
+
+        function generateName() {
+            var name = prompt("당신의 닉네임을 입력해주세요. 괴수 이름으로 변환해 드리겠습니다.");
+            var prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
+            var suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+            newName = prefix + " " + name + " " + suffix;
+
+            document.getElementById("kaijuName").innerText = "당신은 " + newName + "입니다. 당신의 이름을 받아들이시겠습니까?";
+            document.getElementById("buttons").style.display = "block";
+        }
+
+        function acceptName() {
+            document.getElementById("result").innerText = "축하합니다! 당신의 이름은 " + newName + "입니다.";
+        }
+
+        function rejectName() {
+            generateName();
+        }
+
+        window.onload = generateName;
+    </script>
+</head>
+<body>
+    <div id="kaijuName"></div>
+    <div id="buttons" style="display: none;">
+        <button onclick="acceptName()">예</button>
+        <button onclick="rejectName()">아니오</button>
+    </div>
+    <div id="result"></div>
+</body>
+</html>
