@@ -1,3 +1,19 @@
+/* open-sans-regular - latin (meaning, it's "regular" version of the font for "Latin"-based language) */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400; 
+  /* 400 is normal. For bold, higher number like 700 */
+  font-display: swap;
+  /* This specifies how the font should be displayed while it's loading. This ensures the text is visible even if the custom font isn't immediately available. */
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+  url('./fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('./fonts/open-sans-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+:root {
+  --typography-default: 'Open Sans', sans-serif;
+  /* This line defines a custom property (or CSS variable) named --typography__default. It sets the default font for the website to 'Open Sans' with a fallback to the generic sans-serif font in case 'Open Sans' is unavailable. */
+}
 body {
   margin: 60px auto;
   width: 70%;
@@ -33,8 +49,7 @@ h3 {
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 div ul {
-  margin: 0px;
-  padding: 0px;
+  margin: 20px;
 }
 div ul li {
   list-style: none;
