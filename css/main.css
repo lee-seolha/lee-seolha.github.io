@@ -17,6 +17,7 @@
 body {
   margin: 60px auto;
   width: 70%;
+  font-family: var(--typography-default);
 }
 nav ul, footer ul {
   padding: 0px;
