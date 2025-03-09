@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Seolha Lee's first blog post"
+title: "First rambling"
 date: 2025-02-09
 ---
 I got around without using Jekyll until I found out that the theme that I wanted to apply to my Github Pages requires a Jekyll site. So, now, I am converting the pages, following step-by-step guides from installing Jekyll, creating posts, and such. I am still not familiar with all these new terms. And quite honestly, it's like working with a black box and it feels disorienting. But it's fun because I know it's okay to make errors and mistakes (It's not like my life is depending on it, haha)
