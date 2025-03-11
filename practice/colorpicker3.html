@@ -17,13 +17,13 @@
             background-color: var(--background-color);
         }
 
-        /* h1, h2, h3, h4, p, a {
+        a {
             color: var(--foreground-color);
         } */
 
-        /* a:hover {
+        a:hover {
             color: var(--background-color);
-        } */
+        }
 
         /* Style for color pickers */
         .color-picker {
@@ -33,14 +33,14 @@
 </head>
 <body>
     <h3>Choose your colors.</h3>
-    <div class="color picker box" style="border: 1.50px solid olive;   border-radius: 5px; padding: 10px">
-        <h4>Foreground:
-            <span class="color-picker"><input type="color" id="foreground-color-picker" value="#000000"></span>
-        </h4>
-        <h4>Background:
-            <span class="color-picker"> <input type="color" id="background-color-picker" value="#FFFFFF">        </span>
-        </h4>
+    <div class="color-picker-container" style="border: 1.50px #3E8250;   border-radius: 5px; padding: 10px">
+        <label for ="color-picker">Foreground:</label>
+        <input type="color" id="foreground-color-picker" value="#000000">
+        <label for ="color-picker">Background:</label>
+        <input type="color" id="background-color-picker" value="#FFFFFF">
+        <button id="reset-button">Reset Colors</button>
         <p>* Click on the color picker to select a color for the website.</p>
+        
         <script>
             // Function to get cookie value by name
             function getCookie(name) {
@@ -55,20 +55,8 @@
                 document.cookie = name + "=" + encodeURIComponent(value) + "; path=/";
             }
 
-            // Set default colors or retrieve from cookies
-            let forecolor = getCookie('forecolour') || '#000000';
-            let backcolor = getCookie('backcolour') || '#FFFFFF';
-
-            // Apply the colors to the page
-            document.documentElement.style.setProperty('--foreground-color', forecolor);
-            document.documentElement.style.setProperty('--background-color', backcolor);
-
-            // Get the color pickers and set their initial values
             const foreColorPicker = document.getElementById('foreground-color-picker');
             const backColorPicker = document.getElementById('background-color-picker');
-
-            foreColorPicker.value = forecolor;
-            backColorPicker.value = backcolor;
 
             // Update the color preferences when the user selects a color
             foreColorPicker.addEventListener('input', (event) => {
@@ -82,6 +70,30 @@
                 setCookie('backcolour', backcolor);
                 document.documentElement.style.setProperty('--background-color', backcolor);
             });
+            
+            // Reset button functionality
+            document.getElementById('reset-button').addEventListener('click', resetColors);
+
+            // Function to reset colors to the original website styles
+            function resetColors() {
+                // Clear the cookies
+                document.cookie = "forecolour=; path=/; max-age=0";
+                document.cookie = "backcolour=; path=/; max-age=0";
+
+                // Reset the colors by removing custom CSS variables
+                document.documentElement.style.removeProperty('--foreground-color');
+                document.documentElement.style.removeProperty('--background-color');
+
+                // Optionally, reset other styles like text or background color (if you're setting those in CSS)
+                // This will allow the website to return to the default colors as defined in the website's CSS
+                // (where they are initially set in the styles, e.g., in styles.css)
+                document.body.style.color = '';  // Resets any inline styles for foreground
+                document.body.style.backgroundColor = '';  // Resets any inline styles for background
+
+                // Reset the color pickers to their initial values
+                document.getElementById('foreground-color-picker').value = '#000000';
+                document.getElementById('background-color-picker').value = '#FFFFFF';
+            }
         </script>
     </div>
 </body>
