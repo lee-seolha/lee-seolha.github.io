@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Picker</title>
+    <title>Home - Seolha Lee</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <style>
         /* Apply the color variables globally */
         :root {
@@ -14,12 +16,11 @@
         body {
             color: var(--foreground-color);
             background-color: var(--background-color);
-            font-family: Arial, sans-serif;
         }
 
-        h1, h2, h3, h4, p, a {
+        /* h1, h2, h3, h4, p, a {
             color: var(--foreground-color);
-        }
+        } */
 
         /* a:hover {
             color: var(--background-color);
@@ -32,57 +33,57 @@
     </style>
 </head>
 <body>
-    <h1>Color Picker</h1>
-    <h2>Choose Foreground Color</h2>
-    <div class="color-picker">
-        <input type="color" id="foreground-color-picker" value="#000000">
-    </div>
-    <h2>Choose Background Color</h2>
-    <div class="color-picker">
-        <input type="color" id="background-color-picker" value="#FFFFFF">
-    </div>
+    <h3>Choose your colors.</h3>
+    <div class="color picker box" style="border: 1.50px solid olive;   border-radius: 5px; padding: 10px">
+        <h4>Foreground:
+            <span class="color-picker"><input type="color" id="foreground-color-picker" value="#000000"></span>
+        </h4>
+        <h4>Background:
+            <span class="color-picker"> <input type="color" id="background-color-picker" value="#FFFFFF">        </span>
+        </h4>
+        <p>* Click on the color picker to select a color for the website.</p>
+        <script>
+            // Function to get cookie value by name
+            function getCookie(name) {
+                let matches = document.cookie.match(new RegExp(
+                    "(?:^|; )" + name.replace(/([.$?*|{}()\[\]\/\\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }
 
-    <script>
-        // Function to get cookie value by name
-        function getCookie(name) {
-            let matches = document.cookie.match(new RegExp(
-                "(?:^|; )" + name.replace(/([.$?*|{}()\[\]\/\\+^])/g, '\\$1') + "=([^;]*)"
-            ));
-            return matches ? decodeURIComponent(matches[1]) : undefined;
-        }
+            // Function to set cookie
+            function setCookie(name, value) {
+                document.cookie = name + "=" + encodeURIComponent(value) + "; path=/";
+            }
 
-        // Function to set cookie
-        function setCookie(name, value) {
-            document.cookie = name + "=" + encodeURIComponent(value) + "; path=/";
-        }
+            // Set default colors or retrieve from cookies
+            let forecolor = getCookie('forecolour') || '#000000';
+            let backcolor = getCookie('backcolour') || '#FFFFFF';
 
-        // Set default colors or retrieve from cookies
-        let forecolor = getCookie('forecolour') || '#000000';
-        let backcolor = getCookie('backcolour') || '#FFFFFF';
-
-        // Apply the colors to the page
-        document.documentElement.style.setProperty('--foreground-color', forecolor);
-        document.documentElement.style.setProperty('--background-color', backcolor);
-
-        // Get the color pickers and set their initial values
-        const foreColorPicker = document.getElementById('foreground-color-picker');
-        const backColorPicker = document.getElementById('background-color-picker');
-
-        foreColorPicker.value = forecolor;
-        backColorPicker.value = backcolor;
-
-        // Update the color preferences when the user selects a color
-        foreColorPicker.addEventListener('input', (event) => {
-            forecolor = event.target.value;
-            setCookie('forecolour', forecolor);
+            // Apply the colors to the page
             document.documentElement.style.setProperty('--foreground-color', forecolor);
-        });
-
-        backColorPicker.addEventListener('input', (event) => {
-            backcolor = event.target.value;
-            setCookie('backcolour', backcolor);
             document.documentElement.style.setProperty('--background-color', backcolor);
-        });
-    </script>
+
+            // Get the color pickers and set their initial values
+            const foreColorPicker = document.getElementById('foreground-color-picker');
+            const backColorPicker = document.getElementById('background-color-picker');
+
+            foreColorPicker.value = forecolor;
+            backColorPicker.value = backcolor;
+
+            // Update the color preferences when the user selects a color
+            foreColorPicker.addEventListener('input', (event) => {
+                forecolor = event.target.value;
+                setCookie('forecolour', forecolor);
+                document.documentElement.style.setProperty('--foreground-color', forecolor);
+            });
+
+            backColorPicker.addEventListener('input', (event) => {
+                backcolor = event.target.value;
+                setCookie('backcolour', backcolor);
+                document.documentElement.style.setProperty('--background-color', backcolor);
+            });
+        </script>
+    </div>
 </body>
 </html>
