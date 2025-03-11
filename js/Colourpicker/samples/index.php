@@ -43,6 +43,11 @@ if ($_POST)
 echo "\t<style type=\"text/css\">body, legend, a{ color: " . htmlspecialchars($strForecolour) . "; background: " . htmlspecialchars($strBackcolour) . ";}</style>\n";
 ?>
 </head>
+
+
+
+
+
 <body>
 <h1>Colour Picker</h1>
 <form id="colourpicker" method="post" action="index.php">
