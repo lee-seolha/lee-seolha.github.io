@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Seolha Lee</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script type="text/javascript" src="/js/colourpicker.js"></script>
+    <style id="dynamic-styles"></style>
+</head>
+<body>
+    <h2>Welcome to Lee's Office</h2>
+    <ul class="home list">
+        <li><a href="/about">» About</a></li>
+        <li><a href="/research">» Research</a></li>
+        <li><a href="/teaching">» Teaching</a></li>
+        <li><a href="/blog">» Rambles</a></li>
+    </ul>
+    <h3>Change the colours of this page</h3>
+    <form id="colourpicker" method="post" action="#">
+        <fieldset>
+            <legend>Colours</legend>
+            <div>
+                <label for="foreground">Foreground: <a href="choosecolour.html#foreground" id="forelink">pick<span class="context"> a foreground colour</span></a></label>
+                <input type="text" id="foreground" name="foreground">
+            </div>
+            <div>
+                <label for="background">Background: <a href="choosecolour.html#background" id="backlink">pick<span class="context"> a background colour</span></a></label>
+                <input type="text" id="background" name="background">
+            </div>
+        </fieldset>
+        <div>
+            <input type="submit" value="Change colours" id="changecolour">
+        </div>
+    </form>
+    <footer>
+        <ul>
+            <li><a href="mailto:leeseolh@gmail.com">Email</a></li>
+            <li><a href="https://github.com/lee-seolha">github.com/lee-seolha</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
