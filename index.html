@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Seolha Lee</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <script type="text/javascript" src="/js/colorpicker.js"></script>
-    <style id="dynamic-styles"></style>
+    <style>
+        /* Apply the color variables globally */
+        :root {
+            --foreground-color: #000;
+            --background-color: #FFF;
+        }
+        body {
+            color: var(--foreground-color);
+            background-color: var(--background-color);
+        }
+        /* Style for color pickers */
+        .color-picker {
+            margin: 20px;
+        }
+    </style>
 </head>
 <body>
     <h2>Welcome to Lee's Office</h2>
@@ -16,23 +29,58 @@
         <li><a href="/teaching">» Teaching</a></li>
         <li><a href="/blog">» Rambles</a></li>
     </ul>
-    <!-- <h3>Change the colors of this page</h3>
-    <form id="colorpicker" method="post" action="#">
-        <fieldset>
-            <legend>Colors</legend>
-            <div>
-                <label for="foreground"><a href="choosecolour.html#foreground" id="forelink">pick<span class="context"> a foreground color</span></a></label>
-                <input type="text" id="foreground" name="foreground">
-            </div>
-            <div>
-                <label for="background"><a href="choosecolour.html#background" id="backlink">pick<span class="context"> a background color</span></a></label>
-                <input type="text" id="background" name="background">
-            </div>
-        </fieldset>
-        <div>
-            <input type="submit" value="Change colors" id="changecolor">
-        </div>
-    </form> -->
+    <h3>Choose your colors.</h3>
+    <div class="color picker box" style="border: 1.50px solid olive;   border-radius: 5px; padding: 10px">
+        <h4>Foreground:
+            <span class="color-picker"><input type="color" id="foreground-color-picker" value="#000000"></span>
+        </h4>
+        <h4>Background:
+            <span class="color-picker"> <input type="color" id="background-color-picker" value="#FFFFFF">        </span>
+        </h4>
+        <p>* Click on the color picker to select a color for the website.</p>
+        <script>
+            // Function to get cookie value by name
+            function getCookie(name) {
+                let matches = document.cookie.match(new RegExp(
+                    "(?:^|; )" + name.replace(/([.$?*|{}()\[\]\/\\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }
+
+            // Function to set cookie
+            function setCookie(name, value) {
+                document.cookie = name + "=" + encodeURIComponent(value) + "; path=/";
+            }
+
+            // Set default colors or retrieve from cookies
+            let forecolor = getCookie('forecolour') || '#000000';
+            let backcolor = getCookie('backcolour') || '#FFFFFF';
+
+            // Apply the colors to the page
+            document.documentElement.style.setProperty('--foreground-color', forecolor);
+            document.documentElement.style.setProperty('--background-color', backcolor);
+
+            // Get the color pickers and set their initial values
+            const foreColorPicker = document.getElementById('foreground-color-picker');
+            const backColorPicker = document.getElementById('background-color-picker');
+
+            foreColorPicker.value = forecolor;
+            backColorPicker.value = backcolor;
+
+            // Update the color preferences when the user selects a color
+            foreColorPicker.addEventListener('input', (event) => {
+                forecolor = event.target.value;
+                setCookie('forecolour', forecolor);
+                document.documentElement.style.setProperty('--foreground-color', forecolor);
+            });
+
+            backColorPicker.addEventListener('input', (event) => {
+                backcolor = event.target.value;
+                setCookie('backcolour', backcolor);
+                document.documentElement.style.setProperty('--background-color', backcolor);
+            });
+        </script>
+    </div>
     <footer>
         <ul>
             <li><a href="mailto:leeseolh@gmail.com">Email</a></li>
@@ -41,45 +89,3 @@
     </footer>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Seolha Lee</title>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <script type="text/javascript" src="/js/colorpicker.js"></script>
-    <style id="dynamic-styles"></style>
-</head>
-<body>
-    <h2>Welcome to Lee's Office</h2>
-    <ul class="home list">
-        <li><a href="/about">» About</a></li>
-        <li><a href="/research">» Research</a></li>
-        <li><a href="/teaching">» Teaching</a></li>
-        <li><a href="/blog">» Rambles</a></li>
-    </ul>
-    <h3>Change the colors of this page</h3>
-    <form id="colourpicker" method="post" action="#">
-        <fieldset>
-            <legend>Colors</legend>
-            <div>
-                <label for="foreground"><input type="color" id="foreground-colour" name="foreground-colour"></label>
-            </div>
-            <div>
-                <label for="background"><input type="color" id="background-colour" name="background-colour"></label>
-            </div>
-        </fieldset>
-        <div>
-            <input type="submit" value="Save Colors">
-        </div>
-    </form>
-    <footer>
-        <ul>
-            <li><a href="mailto:leeseolh@gmail.com">Email</a></li>
-            <li><a href="https://github.com/lee-seolha">github.com/lee-seolha</a></li>
-        </ul>
-    </footer>
-</body>
-</html> -->
