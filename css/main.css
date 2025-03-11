@@ -49,10 +49,7 @@ h3 {
 h4 {
   font-size: 1em;
 }
-div ul {
-  margin-bottom: 20px;
-}
-div ul li {
+ul li {
   list-style: none;
   font-size: 1.25em;
 }
