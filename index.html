@@ -16,21 +16,23 @@
         <li><a href="/teaching">» Teaching</a></li>
         <li><a href="/blog">» Rambles</a></li>
     </ul>
-    <h3>Change the colors of this page</h3>
-    <form id="colourpicker" method="post" action="#">
+    <!-- <h3>Change the colors of this page</h3>
+    <form id="colorpicker" method="post" action="#">
         <fieldset>
             <legend>Colors</legend>
             <div>
-                <label for="foreground"><input type="color" id="foreground-colour" name="foreground-colour"></label>
+                <label for="foreground"><a href="choosecolour.html#foreground" id="forelink">pick<span class="context"> a foreground color</span></a></label>
+                <input type="text" id="foreground" name="foreground">
             </div>
             <div>
-                <label for="background"><input type="color" id="background-colour" name="background-colour"></label>
+                <label for="background"><a href="choosecolour.html#background" id="backlink">pick<span class="context"> a background color</span></a></label>
+                <input type="text" id="background" name="background">
             </div>
         </fieldset>
         <div>
-            <input type="submit" value="Save Colours">
+            <input type="submit" value="Change colors" id="changecolor">
         </div>
-    </form>
+    </form> -->
     <footer>
         <ul>
             <li><a href="mailto:leeseolh@gmail.com">Email</a></li>
@@ -39,7 +41,6 @@
     </footer>
 </body>
 </html>
-
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -60,20 +61,18 @@
         <li><a href="/blog">» Rambles</a></li>
     </ul>
     <h3>Change the colors of this page</h3>
-    <form id="colorpicker" method="post" action="#">
+    <form id="colourpicker" method="post" action="#">
         <fieldset>
             <legend>Colors</legend>
             <div>
-                <label for="foreground"><a href="choosecolour.html#foreground" id="forelink">pick<span class="context"> a foreground color</span></a></label>
-                <input type="text" id="foreground" name="foreground">
+                <label for="foreground"><input type="color" id="foreground-colour" name="foreground-colour"></label>
             </div>
             <div>
-                <label for="background"><a href="choosecolour.html#background" id="backlink">pick<span class="context"> a background color</span></a></label>
-                <input type="text" id="background" name="background">
+                <label for="background"><input type="color" id="background-colour" name="background-colour"></label>
             </div>
         </fieldset>
         <div>
-            <input type="submit" value="Change colors" id="changecolor">
+            <input type="submit" value="Save Colors">
         </div>
     </form>
     <footer>
