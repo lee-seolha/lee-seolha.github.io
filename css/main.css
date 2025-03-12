@@ -19,6 +19,7 @@ body {
   width: 70%;
   font-family: var(--typography-default);
   line-height: 1.5em;
+  vertical-align: middle;
 }
 nav ul, footer ul {
   padding: 0px;
@@ -49,15 +50,32 @@ h3 {
 h4 {
   font-size: 1em;
 }
-div ul li {
-  list-style: none;
-  font-size: 1.25em;
-}
 p {
   font-size: 1em;
 }
 footer {
   border-top: 1px solid #d5d5d5;
+}
+ul {
+  list-style-type: square;
+  padding-left: 1.0em;
+}
+ul ul {
+  list-style-type: circle;
+}
+ul ul ul {
+  list-style-type: disc;
+}
+ol {
+  list-style-type: decimal;
+  padding-left: 1.0em;
+}
+ol ol {
+  list-style-type: lower-alpha;
+}
+ul.home-list {
+  list-style: none;
+  font-size: 1.25em;
 }
 ul.posts { 
   margin: 20px auto 40px;
@@ -66,6 +84,14 @@ ul.posts {
 }
 ul.posts li {
   list-style: none;
+}
+div.post ul, div.post ol {
+  font-size: 1em;
+}
+div.post blockquote {
+  font-size: 1em;
+  padding-left: 1em;
+  border-left: 1px solid #3e8250b7;
 }
 #trendsGraph-container {
     height: 400px;

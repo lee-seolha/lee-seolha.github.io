@@ -1,122 +1,52 @@
-// Read cookies
+// Function to get cookie value by name
 function getCookie(name) {
     let matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        "(?:^|; )" + name.replace(/([.$?*|{}()\[\]\/\\+^])/g, '\\$1') + "=([^;]*)"
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 
-// Set cookies
-function setCookie(name, value, options = {}) {
-    options = {
-        path: '/',
-        ...options
-    };
-
-    if (options.expires instanceof Date) {
-        options.expires = options.expires.toUTCString();
-    }
-
-    let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
-
-    for (let optionKey in options) {
-        updatedCookie += "; " + optionKey;
-        let optionValue = options[optionKey];
-        if (optionValue !== true) {
-            updatedCookie += "=" + optionValue;
-        }
-    }
-
-    document.cookie = updatedCookie;
+// Function to set cookie
+function setCookie(name, value) {
+    document.cookie = name + "=" + encodeURIComponent(value) + "; path=/";
 }
 
-// Set initial colors
-function setColors() {
-    const strForecolour = getCookie("forecolour") || "#000000";
-    const strBackcolour = getCookie("backcolour") || "#FFFFFF";
+const foreColorPicker = document.getElementById('foreground-color-picker');
+const backColorPicker = document.getElementById('background-color-picker');
 
-    document.getElementById('dynamic-styles').innerHTML = `body, legend, a { color: ${strForecolour}; background: ${strBackcolour}; }`;
-
-    document.getElementById('foreground-colour').value = strForecolour;
-    document.getElementById('background-colour').value = strBackcolour;
-}
-
-// Change colors and set cookies
-function changeColors(event) {
-    event.preventDefault();
-
-    const strForecolour = document.getElementById('foreground-colour').value;
-    const strBackcolour = document.getElementById('background-colour').value;
-
-    setCookie("forecolour", strForecolour, { 'max-age': 3600 * 24 * 365 });
-    setCookie("backcolour", strBackcolour, { 'max-age': 3600 * 24 * 365 });
-
-    setColors();
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    setColors();
-    document.getElementById('colourpicker').addEventListener('submit', changeColors);
+// Update the color preferences when the user selects a color
+foreColorPicker.addEventListener('input', (event) => {
+    forecolor = event.target.value;
+    setCookie('forecolour', forecolor);
+    document.documentElement.style.setProperty('--foreground-color', forecolor);
 });
 
+backColorPicker.addEventListener('input', (event) => {
+    backcolor = event.target.value;
+    setCookie('backcolour', backcolor);
+    document.documentElement.style.setProperty('--background-color', backcolor);
+});
 
-// // Read cookies
-// function getCookie(name) {
-//     let matches = document.cookie.match(new RegExp(
-//         "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-//     ));
-//     return matches ? decodeURIComponent(matches[1]) : undefined;
-// }
+// Reset button functionality
+document.getElementById('reset-button').addEventListener('click', resetColors);
 
-// // Set cookies
-// function setCookie(name, value, options = {}) {
-//     options = {
-//         path: '/',
-//         ...options
-//     };
+// Function to reset colors to the original website styles
+function resetColors() {
+    // Clear the cookies
+    document.cookie = "forecolour=; path=/; max-age=0";
+    document.cookie = "backcolour=; path=/; max-age=0";
 
-//     if (options.expires instanceof Date) {
-//         options.expires = options.expires.toUTCString();
-//     }
+    // Reset the colors by removing custom CSS variables
+    document.documentElement.style.removeProperty('--foreground-color');
+    document.documentElement.style.removeProperty('--background-color');
 
-//     let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    // Optionally, reset other styles like text or background color (if you're setting those in CSS)
+    // This will allow the website to return to the default colors as defined in the website's CSS
+    // (where they are initially set in the styles, e.g., in styles.css)
+    document.body.style.color = '';  // Resets any inline styles for foreground
+    document.body.style.backgroundColor = '';  // Resets any inline styles for background
 
-//     for (let optionKey in options) {
-//         updatedCookie += "; " + optionKey;
-//         let optionValue = options[optionKey];
-//         if (optionValue !== true) {
-//             updatedCookie += "=" + optionValue;
-//         }
-//     }
-
-//     document.cookie = updatedCookie;
-// }
-
-// // Set initial colors
-// function setColors() {
-//     const strForecolor = getCookie("forecolor") || "#000";
-//     const strBackcolor = getCookie("backcolor") || "#FFF";
-
-//     document.getElementById('dynamic-styles').innerHTML = `body, legend, a { color: ${strForecolor}; background: ${strBackcolor}; }`;
-
-//     document.getElementById('foreground').value = strForecolor;
-//     document.getElementById('background').value = strBackcolor;
-// }
-
-// // Change colors and set cookies
-// function changeColors(event) {
-//     event.preventDefault();
-
-//     const strForecolor = document.getElementById('foreground').value;
-//     const strBackcolor = document.getElementById('background').value;
-
-//     setCookie("forecolor", strForecolor, { 'max-age': 3600 * 24 * 365 });
-//     setCookie("backcolor", strBackcolor, { 'max-age': 3600 * 24 * 365 });
-
-//     setColors();
-// }
-
-// document.addEventListener('DOMContentLoaded', (event) => {
-//     setColors();
-//     document.getElementById('colorpicker').addEventListener('submit', changeColors);
-// });
+    // Reset the color pickers to their initial values
+    document.getElementById('foreground-color-picker').value = '#000000';
+    document.getElementById('background-color-picker').value = '#FFFFFF';
+}

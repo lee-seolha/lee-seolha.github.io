@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Seolha Lee</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script type="text/javascript" src="/js/colorpicker.js"></script>
     <style>
         /* Apply the color variables globally */
         :root {
             --foreground-color: #000;
             --background-color: #FFF;
         }
+
         body {
             color: var(--foreground-color);
             background-color: var(--background-color);
         }
+
         a {
             color: var(--foreground-color);
         } */
+
         a:hover {
             color: var(--background-color);
         }
+
         /* Style for color pickers */
         .color-picker {
             margin: 20px;
@@ -29,66 +34,23 @@
 </head>
 <body>
     <h2>Welcome to Lee's Office</h2>
-    <div class="home-list">
-        <ul>
+        <ul class="home-list" role="list">
+            <!--list style is set "none". Add role for screen reader identify it as a list -->
             <li><a href="/about">» About</a></li>
             <li><a href="/research">» Research</a></li>
             <li><a href="/teaching">» Teaching</a></li>
             <li><a href="/blog">» Rambles</a></li>
         </ul>
-    </div>
+        </div>
     <h3>Choose your colors.</h3>
-    <div class="color picker box" style="border: 1.50px solid olive;   border-radius: 5px; padding: 10px">
-        <h4>Foreground:
-            <span class="color-picker"><input type="color" id="foreground-color-picker" value="#000000"></span>
-        </h4>
-        <h4>Background:
-            <span class="color-picker"> <input type="color" id="background-color-picker" value="#FFFFFF">        </span>
-        </h4>
-        <p>* Click on the color picker to select a color for the website.</p>
-        <script>
-            // Function to get cookie value by name
-            function getCookie(name) {
-                let matches = document.cookie.match(new RegExp(
-                    "(?:^|; )" + name.replace(/([.$?*|{}()\[\]\/\\+^])/g, '\\$1') + "=([^;]*)"
-                ));
-                return matches ? decodeURIComponent(matches[1]) : undefined;
-            }
-
-            // Function to set cookie
-            function setCookie(name, value) {
-                document.cookie = name + "=" + encodeURIComponent(value) + "; path=/";
-            }
-
-            // Set default colors or retrieve from cookies
-            let forecolor = getCookie('forecolour') || '#000000';
-            let backcolor = getCookie('backcolour') || '#FFFFFF';
-
-            // Apply the colors to the page
-            document.documentElement.style.setProperty('--foreground-color', forecolor);
-            document.documentElement.style.setProperty('--background-color', backcolor);
-
-            // Get the color pickers and set their initial values
-            const foreColorPicker = document.getElementById('foreground-color-picker');
-            const backColorPicker = document.getElementById('background-color-picker');
-
-            foreColorPicker.value = forecolor;
-            backColorPicker.value = backcolor;
-
-            // Update the color preferences when the user selects a color
-            foreColorPicker.addEventListener('input', (event) => {
-                forecolor = event.target.value;
-                setCookie('forecolour', forecolor);
-                document.documentElement.style.setProperty('--foreground-color', forecolor);
-            });
-
-            backColorPicker.addEventListener('input', (event) => {
-                backcolor = event.target.value;
-                setCookie('backcolour', backcolor);
-                document.documentElement.style.setProperty('--background-color', backcolor);
-            });
-        </script>
-    </div>
+        <div class="color-picker-container" style="border: 1.50px solid #3E8250; border-radius: 5px; padding: 10px">
+            <label for ="color-picker">Foreground:</label>
+            <input type="color" id="foreground-color-picker" value="#000000"><br>
+            <label for ="color-picker">Background:</label>
+            <input type="color" id="background-color-picker" value="#FFFFFF"><br>
+            <button id="reset-button">Reset Colors</button>
+            <p>* Click on the color picker to select colors for the website.</p>
+        </div>
     <footer>
         <ul>
             <li><a href="mailto:leeseolh@gmail.com">Email</a></li>
