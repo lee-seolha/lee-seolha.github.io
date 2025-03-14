@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', (event) => {
 // Function to get cookie value by name
 function getCookie(name) {
     let matches = document.cookie.match(new RegExp(
@@ -50,3 +51,4 @@ function resetColors() {
     document.getElementById('foreground-color-picker').value = '#000000';
     document.getElementById('background-color-picker').value = '#FFFFFF';
 }
+});
