@@ -15,6 +15,18 @@ function setCookie(name, value) {
 const foreColorPicker = document.getElementById('foreground-color-picker');
 const backColorPicker = document.getElementById('background-color-picker');
 
+// Get saved colors from cookies or default
+const savedForeColor = getCookie('forecolour') || getComputedStyle(document.body).color;
+const savedBackColor = getCookie('backcolour') || getComputedStyle(document.body).backgroundColor;
+
+// Apply the saved or default colors to the document
+document.documentElement.style.setProperty('--foreground-color', savedForeColor);
+document.documentElement.style.setProperty('--background-color', savedBackColor);
+
+// Set the initial values of the color pickers to match the applied colors
+foreColorPicker.value = savedForeColor;
+backColorPicker.value = savedBackColor;
+
 // Update the color preferences when the user selects a color
 foreColorPicker.addEventListener('input', (event) => {
     forecolor = event.target.value;
