@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Seolha Lee</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <style>
-        /* Apply the color variables globally */
-        /* :root {
+    <!-- <style>
+        Apply the color variables globally
+        :root {
             --foreground-color: #000;
             --background-color: #FFF;
-        } */
+        }
 
         body {
             color: var(--foreground-color);
@@ -29,7 +29,7 @@
         .color-picker {
             margin: 20px;
         }
-    </style>
+    </style> -->
 </head>
 <body>
     <h2>Welcome to Lee's Office</h2>
@@ -42,11 +42,11 @@
         </ul>
         </div>
     <h3>Choose your colors.</h3>
-        <div class="color-picker-container" style="border: 1.50px solid #3E8250; border-radius: 5px; padding: 10px">
+        <div class="color-picker-container" style="border: 1.50px solid; border-radius: 5px; padding: 10px">
             <label for ="color-picker">Foreground: </label>
             <input type="color" id="foreground-color-picker"><br><br>
             <label for ="color-picker">Background: </label>
-            <input type="color" id="background-color-picker" #ffffff><br><br>
+            <input type="color" id="background-color-picker"><br><br>
             <button id="reset-button">Reset Colors</button>
             <p>* Click on the color picker to select colors for the website.</p>
             <script type="text/javascript" src="js/Colourpicker/colorpicker.js"></script>
