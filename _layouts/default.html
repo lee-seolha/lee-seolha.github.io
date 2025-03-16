@@ -11,19 +11,21 @@
 				:root {
 					--foreground-color: #000;
 					--background-color: #FFF;
+					--link-color: #3E8250; /* Default link color */
 				}
-		
+
 				body {
 					color: var(--foreground-color);
 					background-color: var(--background-color);
 				}
-		
+
 				a {
-					color: var(--foreground-color);
+					color: var(--link-color);
 				}
-		
-				a:hover {
-					color: var(--background-color);
+
+				/* Style for color pickers */
+				.color-picker {
+					margin: 20px;
 				}
 			</style>
 			<script>

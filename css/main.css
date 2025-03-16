@@ -25,7 +25,6 @@ nav ul, footer ul {
   padding: 0px;
   list-style: none;
   font-weight: bold;
-  /* color: #3E8250; */
 }
 nav ul li, footer ul li {
   display: inline;
@@ -71,7 +70,7 @@ ul.posts li {
 div.post blockquote {
   font-size: 1em;
   padding-left: 1em;
-  border-left: 1px solid #3e8250b7;
+  border-left: 1px solid;
 }
 div.post ul, div.post ol {
   font-size: 1em;
