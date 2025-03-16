@@ -27,18 +27,26 @@ title: Color Picker - Seolha Lee
         .color-picker {
             margin: 20px;
         }
+
+        .color-picker-container {
+            border: 1.50px solid;
+            border-radius: 5px;
+            padding: 10px;
+            line-height: 2.5em;
+        }
     </style>
 </head>
 <body>
     <h2>Color Picker</h2>
     <p>Click on the color pickers below to select colors for the website.</p>
-    <div class="color-picker-container" style="border: 1.50px solid #3E8250; border-radius: 5px; padding: 1em; line-height: 3.0em;">
-        <label for ="color-picker">Text:</label>
+    <div class="color-picker-container" style="border: 1.50px solid; border-radius: 5px; padding: 1em; line-height: 3.0em;">
+        <label for ="color-picker">Foreground:</label>
         <input type="color" id="foreground-color-picker" value="#000000"><br>
         <label for ="color-picker">Background:</label>
         <input type="color" id="background-color-picker" value="#FFFFFF"><br>
         <button id="reset-button" style="padding: 0.3em; font-family: 'Open Sans', sans-serif;">Reset Colors</button>
         <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
             // Function to get cookie value by name
             function getCookie(name) {
                 let matches = document.cookie.match(new RegExp(
@@ -91,6 +99,20 @@ title: Color Picker - Seolha Lee
                 document.getElementById('foreground-color-picker').value = '#000000';
                 document.getElementById('background-color-picker').value = '#FFFFFF';
             }
+            // Apply saved colors on page load
+                const savedForeColor = getCookie('forecolour');
+                const savedBackColor = getCookie('backcolour');
+
+                if (savedForeColor) {
+                    document.documentElement.style.setProperty('--foreground-color', savedForeColor);
+                    foreColorPicker.value = savedForeColor;
+                }
+
+                if (savedBackColor) {
+                    document.documentElement.style.setProperty('--background-color', savedBackColor);
+                    backColorPicker.value = savedBackColor;
+                }
+            });
         </script>
     </div>
 </body>

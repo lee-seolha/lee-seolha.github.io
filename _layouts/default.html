@@ -6,6 +6,49 @@
 			<title>{{ page.title }}</title>
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="/css/main.css">
+			<style>
+				/* Apply the color variables globally */
+				:root {
+					--foreground-color: #000;
+					--background-color: #FFF;
+				}
+		
+				body {
+					color: var(--foreground-color);
+					background-color: var(--background-color);
+				}
+		
+				a {
+					color: var(--foreground-color);
+				}
+		
+				a:hover {
+					color: var(--background-color);
+				}
+			</style>
+			<script>
+				// Function to get cookie value by name
+				function getCookie(name) {
+					let matches = document.cookie.match(new RegExp(
+						"(?:^|; )" + name.replace(/([.$?*|{}()\[\]\/\\+^])/g, '\\$1') + "=([^;]*)"
+					));
+					return matches ? decodeURIComponent(matches[1]) : undefined;
+				}
+			
+				// Apply saved colors on page load
+				document.addEventListener('DOMContentLoaded', (event) => {
+					const savedForeColor = getCookie('forecolour');
+					const savedBackColor = getCookie('backcolour');
+			
+					if (savedForeColor) {
+						document.documentElement.style.setProperty('--foreground-color', savedForeColor);
+					}
+			
+					if (savedBackColor) {
+						document.documentElement.style.setProperty('--background-color', savedBackColor);
+					}
+				});
+			</script>
 		</head>
 		<body>
 			<nav>
