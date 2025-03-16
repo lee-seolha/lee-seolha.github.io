@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <style>
+        /* Apply the color variables globally */
+        :root {
+            --foreground-color: #000;
+            --background-color: #FFF;
+        }
+
+        body {
+            color: var(--foreground-color);
+            background-color: var(--background-color);
+        }
+
+        a {
+            color: var(--foreground-color);
+        } */
+
+        a:hover {
+            color: var(--background-color);
+        }
+
+        /* Style for color pickers */
+        .color-picker {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Color Picker</h2>
+    <p>Click on the color pickers below to select colors for the website.</p>
+    <div class="color-picker-container" style="border: 1.50px solid #3E8250; border-radius: 5px; padding: 1em; line-height: 3.0em;">
+        <label for ="color-picker">Text:</label>
+        <input type="color" id="foreground-color-picker" value="#000000"><br>
+        <label for ="color-picker">Background:</label>
+        <input type="color" id="background-color-picker" value="#FFFFFF"><br>
+        <button id="reset-button" style="padding: 0.3em; font-family: 'Open Sans', sans-serif;">Reset Colors</button>
+        <script>
+            // Function to get cookie value by name
+            function getCookie(name) {
+                let matches = document.cookie.match(new RegExp(
+                    "(?:^|; )" + name.replace(/([.$?*|{}()\[\]\/\\+^])/g, '\\$1') + "=([^;]*)"
+                ));
+                return matches ? decodeURIComponent(matches[1]) : undefined;
+            }
+
+            // Function to set cookie
+            function setCookie(name, value) {
+                document.cookie = name + "=" + encodeURIComponent(value) + "; path=/";
+            }
+
+            const foreColorPicker = document.getElementById('foreground-color-picker');
+            const backColorPicker = document.getElementById('background-color-picker');
+
+            // Update the color preferences when the user selects a color
+            foreColorPicker.addEventListener('input', (event) => {
+                forecolor = event.target.value;
+                setCookie('forecolour', forecolor);
+                document.documentElement.style.setProperty('--foreground-color', forecolor);
+            });
+
+            backColorPicker.addEventListener('input', (event) => {
+                backcolor = event.target.value;
+                setCookie('backcolour', backcolor);
+                document.documentElement.style.setProperty('--background-color', backcolor);
+            });
+            
+            // Reset button functionality
+            document.getElementById('reset-button').addEventListener('click', resetColors);
+
+            // Function to reset colors to the original website styles
+            function resetColors() {
+                // Clear the cookies
+                document.cookie = "forecolour=; path=/; max-age=0";
+                document.cookie = "backcolour=; path=/; max-age=0";
+
+                // Reset the colors by removing custom CSS variables
+                document.documentElement.style.removeProperty('--foreground-color');
+                document.documentElement.style.removeProperty('--background-color');
+
+                // Optionally, reset other styles like text or background color (if you're setting those in CSS)
+                // This will allow the website to return to the default colors as defined in the website's CSS
+                // (where they are initially set in the styles, e.g., in styles.css)
+                document.body.style.color = '';  // Resets any inline styles for foreground
+                document.body.style.backgroundColor = '';  // Resets any inline styles for background
+
+                // Reset the color pickers to their initial values
+                document.getElementById('foreground-color-picker').value = '#000000';
+                document.getElementById('background-color-picker').value = '#FFFFFF';
+            }
+        </script>
+    </div>
+</body>
+</html>
