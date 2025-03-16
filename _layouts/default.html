@@ -13,7 +13,7 @@
 				:root {
 					--foreground-color: #000;
 					--background-color: #FFF;
-					--link-color: #3E8250; /* Default link color */
+					--link-color: #3E8250;
 				}
 
 				body {
@@ -29,12 +29,9 @@
 					color: var(--link-color);
 					text-decoration: underline;
 				}
-				
-				/* Style for color pickers */
-				.color-picker {
-					margin: 20px;
-				}
+
 			</style>
+
 			<script>
 				// Function to get cookie value by name
 				function getCookie(name) {
@@ -59,7 +56,7 @@
 					}
 					
 					if (savedLinkColor) {
-						document.documentElement.style.setProperty('--link-color', savedBackColor);
+						document.documentElement.style.setProperty('--link-color', savedLinkColor);
 					}
 										
 				});
