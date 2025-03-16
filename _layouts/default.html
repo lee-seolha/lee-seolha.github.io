@@ -4,6 +4,8 @@
 			<meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 			<title>{{ page.title }}</title>
+			<!-- for bootstrap collapse in visualizations page -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 			<!-- link to main stylesheet -->
 			<link rel="stylesheet" type="text/css" href="/css/main.css">
 			<style>
@@ -46,6 +48,7 @@
 				document.addEventListener('DOMContentLoaded', (event) => {
 					const savedForeColor = getCookie('forecolour');
 					const savedBackColor = getCookie('backcolour');
+					const savedLinkColor = getCookie('linkcolour');
 			
 					if (savedForeColor) {
 						document.documentElement.style.setProperty('--foreground-color', savedForeColor);
@@ -54,6 +57,11 @@
 					if (savedBackColor) {
 						document.documentElement.style.setProperty('--background-color', savedBackColor);
 					}
+					
+					if (savedLinkColor) {
+						document.documentElement.style.setProperty('--link-color', savedBackColor);
+					}
+										
 				});
 			</script>
 		</head>
