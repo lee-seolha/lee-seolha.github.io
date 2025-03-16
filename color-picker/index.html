@@ -2,18 +2,65 @@
 layout: default
 title: Color Picker 
 ---
-<h2>Color Picker</h2>
-<p>Click on the color pickers below to select colors for the website.</p>
-<div class="color-picker-container" style="border: 1.50px solid; border-radius: 5px; padding: 5px 10px; line-height: 2.5em; margin-bottom: 1.6em;">
-    <label for ="color-picker">Foreground:</label>
-    <input type="color" id="foreground-color-picker" value="#000000"><br>
-    <label for ="color-picker">Background:</label>
-    <input type="color" id="background-color-picker" value="#FFFFFF"><br>
-    <label for="text-color-picker">Text Color (Links):</label>
-    <input type="color" id="text-color-picker" value="#3E8250"><br>
-    <button id="reset-button" style="padding: 0.3em; font-family: 'Open Sans', sans-serif;">Reset Colors</button>
+<style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <script>
+    input[type=color]{
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      appearance: auto;
+      inline-size: 50px;
+    }
+    
+    label {
+      padding: 5px 5px 5px 0;
+      display: inline-block;
+    }
+
+    button {
+      padding: 0.3em;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+    }
+        
+    .color-picker-container {
+      border-radius: 5px;
+      border: 1.50px solid;
+      padding: 10px 20px;
+    }
+    
+    .col-25 {
+      float: left;
+      width: 15%;
+      margin-top: 6px;
+    }
+    
+    .col-75 {
+      float: left;
+      width: 85%;
+      margin-top: 6px;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .col-25, .col-75, button {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+</style>
+
+<script>
     document.addEventListener('DOMContentLoaded', (event) => {
         // Function to get cookie value by name
         function getCookie(name) {
@@ -73,7 +120,7 @@ title: Color Picker
             // Reset the color pickers to their initial values
             document.getElementById('foreground-color-picker').value = '#000000';
             document.getElementById('background-color-picker').value = '#FFFFFF';
-            document.getElementById('text-color-picker').value = '#0000FF';
+            document.getElementById('text-color-picker').value = '#3E8250';
         }
 
         // Apply saved colors on page load
@@ -96,5 +143,39 @@ title: Color Picker
             textColorPicker.value = savedLinkColor;
         }
     });
-    </script>
+</script>
+
+<h2>Color Picker</h2>
+<p>Click on the color pickers below to select colors for the website.</p>
+<div class="color-picker-container">
+    <div class="row">
+        <div class="col-25">
+            <label for="color-picker">Foreground</label>
+        </div>
+        <div class ="col-75">
+            <input type="color" id="foreground-color-picker" value="#000000">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label for="color-picker">Background</label>
+        </div>
+        <div class ="col-75">
+            <input type="color" id="background-color-picker" value="#FFFFFF">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+            <label for="text-color-picker">Linked Text</label>
+        </div>
+        <div class="col-75">
+            <input type="color" id="text-color-picker" value="#3E8250">
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-25"></div>
+    <div class="col-75">
+    <button id="reset-button">Reset Colors</button>
+    </div>
+    </div>
 </div>
