@@ -25,24 +25,27 @@ title: Color Picker
       cursor: pointer;
       color: black;
       font-family: 'Open Sans', sans-serif;
+      inline-size: 100px;
+      margin-top: 10px;
     }
         
     .color-picker-container {
       border-radius: 5px;
       border: 1.50px solid;
       padding: 10px 20px;
+      width: 30em;
       margin-bottom: 1.6em;
     }
     
     .col-25 {
       float: left;
-      width: 15%;
+      width: 50%;
       margin-top: 6px;
     }
     
     .col-75 {
       float: left;
-      width: 85%;
+      width: 50%;
       margin-top: 6px;
     }
     
@@ -54,7 +57,7 @@ title: Color Picker
     }
     
     /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 768px) {
       .col-25, .col-75, button {
         width: 100%;
         margin-top: 0;
@@ -79,25 +82,25 @@ title: Color Picker
 
         const foreColorPicker = document.getElementById('foreground-color-picker');
         const backColorPicker = document.getElementById('background-color-picker');
-        const textColorPicker = document.getElementById('text-color-picker');
+        const linkColorPicker = document.getElementById('link-color-picker');
 
         // Update the color preferences when the user selects a color
         foreColorPicker.addEventListener('input', (event) => {
             const forecolor = event.target.value;
-            setCookie('forecolour', forecolor);
+            setCookie('forecolor', forecolor);
             document.documentElement.style.setProperty('--foreground-color', forecolor);
         });
 
         backColorPicker.addEventListener('input', (event) => {
             const backcolor = event.target.value;
-            setCookie('backcolour', backcolor);
+            setCookie('backcolor', backcolor);
             document.documentElement.style.setProperty('--background-color', backcolor);
         });
 
-        textColorPicker.addEventListener('input', (event) => {
+        linkColorPicker.addEventListener('input', (event) => {
             const linkColor = event.target.value;
-            setCookie('linkcolor', linkColor);
-            document.documentElement.style.setProperty('--link-color', linkColor);
+            setCookie('linkcolor', linkcolor);
+            document.documentElement.style.setProperty('--link-color', linkcolor);
         });
         
         // Reset button functionality
@@ -106,8 +109,8 @@ title: Color Picker
         // Function to reset colors to the original website styles
         function resetColors() {
             // Clear the cookies
-            document.cookie = "forecolour=; path=/; max-age=0";
-            document.cookie = "backcolour=; path=/; max-age=0";
+            document.cookie = "forecolor=; path=/; max-age=0";
+            document.cookie = "backcolor=; path=/; max-age=0";
             document.cookie = "linkcolor=; path=/; max-age=0";
 
             // Reset the colors by removing custom CSS variables
@@ -115,19 +118,19 @@ title: Color Picker
             document.documentElement.style.removeProperty('--background-color');
             document.documentElement.style.removeProperty('--link-color');
 
-            // Optionally, reset other styles like text or background color (if you're setting those in CSS)
-            document.body.style.color = '';  // Resets any inline styles for foreground
-            document.body.style.backgroundColor = '';  // Resets any inline styles for background
+            // // Optionally, reset other styles like text or background color (if you're setting those in CSS)
+            // document.body.style.color = '';  // Resets any inline styles for foreground
+            // document.body.style.backgroundColor = '';  // Resets any inline styles for background
 
             // Reset the color pickers to their initial values
             document.getElementById('foreground-color-picker').value = '#000000';
             document.getElementById('background-color-picker').value = '#FFFFFF';
-            document.getElementById('text-color-picker').value = '#3E8250';
+            document.getElementById('link-color-picker').value = '#3E8250';
         }
 
         // Apply saved colors on page load
-        const savedForeColor = getCookie('forecolour');
-        const savedBackColor = getCookie('backcolour');
+        const savedForeColor = getCookie('forecolor');
+        const savedBackColor = getCookie('backcolor');
         const savedLinkColor = getCookie('linkcolor');
 
         if (savedForeColor) {
@@ -142,7 +145,7 @@ title: Color Picker
 
         if (savedLinkColor) {
             document.documentElement.style.setProperty('--link-color', savedLinkColor);
-            textColorPicker.value = savedLinkColor;
+            linkColorPicker.value = savedLinkColor;
         }
     });
 </script>
@@ -168,10 +171,10 @@ title: Color Picker
     </div>
     <div class="row">
         <div class="col-25">
-            <label for="text-color-picker">Linked Text</label>
+            <label for="color-picker">Linked Text</label>
         </div>
         <div class="col-75">
-            <input type="color" id="text-color-picker" value="#3E8250">
+            <input type="color" id="link-color-picker" value="#3E8250">
         </div>
     </div>
     <div class="row">

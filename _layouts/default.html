@@ -43,9 +43,9 @@
 			
 				// Apply saved colors on page load
 				document.addEventListener('DOMContentLoaded', (event) => {
-					const savedForeColor = getCookie('forecolour');
-					const savedBackColor = getCookie('backcolour');
-					const savedLinkColor = getCookie('linkcolour');
+					const savedForeColor = getCookie('forecolor');
+					const savedBackColor = getCookie('backcolor');
+					const savedLinkColor = getCookie('linkcolor');
 			
 					if (savedForeColor) {
 						document.documentElement.style.setProperty('--foreground-color', savedForeColor);
@@ -67,7 +67,6 @@
 	    		<ul>
 	        		<li><a href="/">Home</a></li>
 					<li><a href="/about">About</a></li>
-					<li><a href="/color-picker">Color Picker</a></li>
 		        	<li><a href="/research">Research</a></li>
 	        		<li><a href="/teaching">Teaching</a></li>
 					<li><a href="/blog">Rambles</a></li>
@@ -82,6 +81,7 @@
 	    		<ul>
 	        		<li><a href="mailto:leeseolh@gmail.com">Email</a></li>
 	        		<li><a href="https://github.com/lee-seolha">github.com/lee-seolha</a></li>
+					<li><a href="/color-picker">Color Picker</a></li>
 				</ul>
 			</footer>
 		</body>
