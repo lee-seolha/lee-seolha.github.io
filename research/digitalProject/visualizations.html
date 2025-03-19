@@ -7,17 +7,19 @@ title: Visualizations - Seolha Lee
         #controls {
             padding: 10px;
             color: #333;
-            font-size: 0.8rem;
-            text-align: center;
+            font-family: 'Open Sans' sans-serif; 
+            font-size: 0.875rem;
+            text-align: left;
             border: 1px solid #c3d7cf;
             background-color: #f7f7f8;
+            font-weight: medium;
             overflow: hidden;
             height: 0;
             transition: height 0.4s, border 0.2s, background-color 0.2s, outline 0.15s;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(100, 100, 150, 0.3);
             visibility: hidden;
-        }
+        }  
 
         #controls:focus {
             border: 1px solid #78c8ab;
@@ -36,11 +38,7 @@ title: Visualizations - Seolha Lee
             border: 1px solid #25386f;
             color: #25386f;
             font-size: 1em;
-            max-height: 1.8rem;
             border-radius: 4px;
-            padding: 0.5em;            
-            margin-bottom: 0.25rem;
-            margin-top: 0.5rem;
             text-align: center;
             cursor: pointer;
         }
@@ -52,10 +50,11 @@ title: Visualizations - Seolha Lee
 
         figure {
             text-align: center;
+            margin-bottom: 1.5em;
         }
 
         img {
-          width: 70%;
+          width: 50%;
           height: auto;
         }
 
@@ -81,8 +80,7 @@ title: Visualizations - Seolha Lee
       </p>
 
     <h3>Three Visualization Samples</h3>
-      <h4>Trends Graph</h4>
-      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#trendsgraph">Expand / Collapse</button>
+      <h4>Trends Graph  <button type="collapse" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#trendsgraph">Expand / Collapse</button></h4>
       <div id="trendsgraph" class="collapse">
         <p>The trends graphs in this section display correlations between sight, hearing, and nature in the 1805 <em>Prelude</em> by tracing relative frequencies of word groups in each category.<br>
         <strong>Keywords Used</strong>
@@ -92,18 +90,19 @@ title: Visualizations - Seolha Lee
             <li>hearing: hear|heard|hears|hearing*|sound*|voice|ear</li>
           </ul>
 
-          <h5>Voyant Trends Graph</h5>
+          <h5>» Voyant Trends Graph</h5>
             <figure class="voyant trends graph">
                 <img src="./resources/VoyantTrendsGraph.png" alt="A line graph showing relative frequencies across 13 books, with red, blue, and yellow lines">
                 <figcaption>Relative Frequencies of sight (red), hearing (blue), and nature (yellow) across Books 1-13, showing the changing prominence of sensory and environmental themes.</figcaption>
             </figure>
             <p class="long description">The trends graph shows relative frequencies (y-axis ranging from 0.000 to 0.008) across 13 books (x-axis). Three trends are tracked: 'sight' (red line), 'hearing' (blue line), and 'nature' (yellow line). 'Sight' and 'hearing' start similarly at a little above 0.002 in books 1 and 2, while 'nature' begins around 0.001 in Book 1 and rises above 0.003 in Book 2. From Book 3 onward, the 'sight' trend consistently shows higher frequencies (peaking around 0.007) compared to the other two trends that stay below 0.004, with 'nature' reaching as low as 0.001. A notable exception occurs in Book 12, where 'nature' reaches its highest point, approaching one of 'sight's' peak values. All three trends end at around 0.004 in the final book (13). The graph includes circular data points at each book marker and light gray vertical grid lines to aid in tracking frequency changes. An observation could be made from the graph that those frequency patterns suggest Wordsworth's preference for visual imagery over auditory references throughout <em>The Prelude</em>.</p>
-            <h5>Sonified Chart</h5>
+            <h5>» Sonified Chart</h5>
+            <p class="chart description">This graph incorporates the sonification and keyboard navigation features. Click "Play Chart" to get started and enable the keyboard navigation. This feature requires a keyboard for navigation.</p>
             <figure class="sonifed trendsGraph">
               <div id="top">
               <button id="sonify">Play chart</button>
               </div>
-              <div id="controls" role="application" tabindex="0" aria-label="Audio chart" style="font-family: 'Open Sans' sans-serif; font-size: 0.8em; text-align: left;">
+              <div id="controls" role="application" tabindex="0" aria-label="Audio chart">
               Press spacebar to play and pause chart. Use arrow keys to navigate back and forth and between lines. Use Home/End to go to the beginning and end of a series. Press Esc to silence all audio and reset the chart.
               </div>
               <div id="trendsGraph-container"></div>
@@ -113,11 +112,9 @@ title: Visualizations - Seolha Lee
                 document.querySelector('.trendsGraph').appendChild(script);
               </script>
             </figure>
-            <p class="chart description">This graph incorporates the sonification and keyboard navigation features. Click "Play Chart" to get started and enable the keyboard navigation.</p>
       </div>
 
-      <h4>TermsBerry</h4>
-      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#termsberry">Expand / Collapse</button>
+      <h4>TermsBerry  <button type="collapse" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#termsberry">Expand / Collapse</button></h4>
       <div id="termsberry" class="collapse">
         <p>TermsBerry Visualization of the Wordsworth Collection (Corpus 2)<br>
         <strong>Options Used</strong><br>
@@ -136,8 +133,8 @@ title: Visualizations - Seolha Lee
         <a href = "https://voyant-tools.org/?corpus=db914e08a59f7c9cb222f77015c4d365&view=TermsBerry">Click to open an interactive version in Voyant </a></p>
       </div>
     
-    <h3>ScatterPlot</h3>
-    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#scatterplot">Expand / Collapse</button>
+    <h4>ScatterPlot  <button type="collapse" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#scatterplot">Expand / Collapse</button></h4>
+    <p>TermsBerry Visualization of the Wordsworth Collection (Corpus 2)</p>
     <div id="scatterplot" class="collapse">
       <figure class="scatterPlot">
         <img src="./resources/VoyantScatterPlot.png" alt="A scatterplot with labeled circles of different sizes and colors, displaying data across three dimensions">

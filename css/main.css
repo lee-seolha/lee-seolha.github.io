@@ -14,17 +14,28 @@
   --typography-default: 'Open Sans', sans-serif;
   /* This line defines a custom property (or CSS variable) named --typography__default. It sets the default font for the website to 'Open Sans' with a fallback to the generic sans-serif font in case 'Open Sans' is unavailable. */
 }
+
 body {
   margin: 60px auto;
-  width: 70%;
+  width: 80%;
   font-family: var(--typography-default);
   line-height: 1.5em;
   vertical-align: middle;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+div {
+  width: 100%;
+}
+
 nav ul, footer ul {
   padding: 0px;
   list-style: none;
   font-weight: bold;
+  letter-spacing: 0.01em;
 }
 nav ul li, footer ul li {
   display: inline;
@@ -37,26 +48,41 @@ a:hover {
   text-decoration: underline;
 }
 h1 {
-  font-size: 2em;
+  font-size: 2.125rem;
+  font-weight: bold;
 }
 h2 {
-  font-size: 1.5em;
+  font-size: 1.875rem;
+  font-weight: bold;
 }
 h3 {
-  font-size: 1.17em;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 h4 {
-  font-size: 1em;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
 h5 {
-  font-size: 1em;
+  font-size: 1.125rem;
+  font-style:bold;
+}
+h6 {
+  font-size: 1rem;
+  font-weight: bold;
 }
 p {
-  font-size: 1em;
+  font-size: 1rem;
+  margin-bottom: 1.5em;
+}
+figcaption {
+  font-size: 0.875em;
+  letter-spacing: 0.01em;
+  font-weight: medium;
 }
 footer {
   border-top: 1px solid #d5d5d5;
-  margin-top: 1.6em
+  margin-top: 1.6em;
 }
 ul.home-list {
   list-style: none;
@@ -95,6 +121,6 @@ div.post ol {
 div.post ol ol {
   list-style-type: lower-alpha;
 }
-#trendsGraph-container {
+/* #trendsGraph-container {
     height: 400px;
-}
+} */
