@@ -27,8 +27,11 @@ body {
   box-sizing: border-box;
 }
 
-div {
+div.container {
+  max-width: 100%;
   width: 100%;
+  padding-left: 15px; /* Optional: Ensure there's padding on both sides */
+  padding-right: 15px;
 }
 
 nav ul, footer ul {
