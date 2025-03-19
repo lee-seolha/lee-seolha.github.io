@@ -49,7 +49,7 @@ a {
 }
 a:hover {
   text-decoration: underline;
-}
+/* }
 h1 {
   font-size: 2.125rem;
   font-weight: bold;
@@ -73,16 +73,31 @@ h5 {
 h6 {
   font-size: 1rem;
   font-weight: bold;
-}
+} */
 p {
-  font-size: 1rem;
+  /* font-size: 1rem; */
   margin-bottom: 1.5em;
 }
+
+figure {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+}
+
 figcaption {
+  display: table-caption; 
+  caption-side: bottom;
   font-size: 0.875em;
   letter-spacing: 0.01em;
-  font-weight: medium;
+  font-weight: 500;
 }
+
+figure.img {
+  width: 100%;
+}
+
 footer {
   border-top: 1px solid #d5d5d5;
   margin-top: 1.6em;

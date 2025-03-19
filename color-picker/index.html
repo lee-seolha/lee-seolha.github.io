@@ -16,7 +16,7 @@ title: Color Picker
       display: inline-block;
     }
 
-    button {
+    #reset-button {
       padding: 0.3em;
       cursor: pointer;
       color: black;
@@ -33,17 +33,17 @@ title: Color Picker
       margin-bottom: 1.6em;
     }
     
-    .col-25 {
+    .col-label, .col-color {
       float: left;
       width: 50%;
       margin-top: 6px;
     }
     
-    .col-75 {
+    /* .col-color {
       float: left;
       width: 50%;
       margin-top: 6px;
-    }
+    } */
     
     /* Clear floats after the columns */
     .row:after {
@@ -54,7 +54,7 @@ title: Color Picker
     
     /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
     @media screen and (max-width: 768px) {
-      .col-25, .col-75, button {
+      .col-label, .col-color, #reset-button {
         width: 100%;
         margin-top: 0;
       }
@@ -94,7 +94,7 @@ title: Color Picker
         });
 
         linkColorPicker.addEventListener('input', (event) => {
-            const linkColor = event.target.value;
+            const linkcolor = event.target.value;
             setCookie('linkcolor', linkcolor);
             document.documentElement.style.setProperty('--link-color', linkcolor);
         });
@@ -150,32 +150,32 @@ title: Color Picker
 <p>Click on the color pickers below to select colors for the website.</p>
 <div class="color-picker-container">
     <div class="row">
-        <div class="col-25">
+        <div class="col-label">
             <label for="color-picker">Foreground</label>
         </div>
-        <div class ="col-75">
+        <div class ="col-color">
             <input type="color" id="foreground-color-picker" value="#000000">
         </div>
     </div>
     <div class="row">
-        <div class="col-25">
+        <div class="col-label">
             <label for="color-picker">Background</label>
         </div>
-        <div class ="col-75">
+        <div class ="col-color">
             <input type="color" id="background-color-picker" value="#FFFFFF">
         </div>
     </div>
     <div class="row">
-        <div class="col-25">
+        <div class="col-label">
             <label for="color-picker">Linked Text</label>
         </div>
-        <div class="col-75">
+        <div class="col-color">
             <input type="color" id="link-color-picker" value="#3E8250">
         </div>
     </div>
     <div class="row">
-    <div class="col-25"></div>
-    <div class="col-75">
+    <div class="col-label"></div>
+    <div class="col-color">
     <button id="reset-button">Reset Colors</button>
     </div>
     </div>
