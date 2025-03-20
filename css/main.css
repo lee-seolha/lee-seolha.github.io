@@ -49,33 +49,9 @@ a {
 }
 a:hover {
   text-decoration: underline;
-/* }
-h1 {
-  font-size: 2.125rem;
-  font-weight: bold;
 }
-h2 {
-  font-size: 1.875rem;
-  font-weight: bold;
-}
-h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-h4 {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-h5 {
-  font-size: 1.125rem;
-  font-style:bold;
-}
-h6 {
-  font-size: 1rem;
-  font-weight: bold;
-} */
+
 p {
-  /* font-size: 1rem; */
   margin-bottom: 1.5em;
 }
 
@@ -102,10 +78,12 @@ footer {
   border-top: 1px solid #d5d5d5;
   margin-top: 1.6em;
 }
+
 ul.home-list {
-  list-style: none;
+  list-style-type: none;
   font-size: 1.25em;
 }
+
 ul.posts { 
   margin: 20px auto 40px;
   font-size: 1em;
@@ -139,6 +117,3 @@ div.post ol {
 div.post ol ol {
   list-style-type: lower-alpha;
 }
-/* #trendsGraph-container {
-    height: 400px;
-} */
