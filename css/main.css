@@ -91,12 +91,16 @@ ul.posts {
 ul.posts li {
   list-style: none;
 }
-/* blog posts formatting */
-div.post blockquote {
-  font-size: 1em;
-  padding-left: 1em;
-  border-left: 1px solid;
+section.footnotes, section.footnotes blockquote {
+  font-size: extra-small;
 }
+
+blockquote {
+  font-size: 1em;
+}
+
+/* blog posts formatting */
+
 div.post ul, div.post ol {
   font-size: 1em;
 }

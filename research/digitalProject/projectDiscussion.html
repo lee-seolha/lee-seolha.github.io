@@ -16,9 +16,9 @@ both) and the passive voice (nature is <em>watched</em> by the viewer) describes
 	<img src="./resources/AccessibilityAndMultimodality_Figure1_VoyantScreenshot.jpg" alt="A screenshot of Voyant tools with William Wordsworth's 1805 Prelude. The top row is, from the left, Cirrus, Reader, and Trends, and at the bottom are Summary and Contexts." style="width:100%"><figcaption>Figure 1 . Voyant with William Wordsworth’s 1805 Prelude</figcaption>
 </figure>
 <p >My question about visualizations tools like Voyant is quite simple: how we can make visualizations <em>not just visual</em>. It may sound counterintuitive and even oxymoronic because visualization tools are fundamentally designed on the idea of visuals as <em>primary</em> modes of knowledge production, which make it unsuitable for low vision or blind users. In <a href="https://www.cambridge.org/core/journals/pmla/article/abs/texturing-the-digital-humanities-a-manifesto/557A4C568EBA82466D6FBB3425EECE32">“Texturing the Digital Humanities: A Manifesto”</a> (2020), Sari Altschuler and David Weimer contend that &quot;[t]he digital humanities is today overwhelmingly visual.&quot;A lot of contributions made by digital humanities focuses on visualization. Not only visualization of data but also making <em>visible</em> cultural artifacts through digitization and archiving. But the efforts have cost other modes of knowledge production and dissemination. An example is the digital surrogates of texts crea ted at the sake of the texture and tactile information of the original physical objects, for which Altschuler and Weimer launched the Touch This Page project. The project aims to reproduce textured knowledge and sensorial experience of the objects. Their project shows that different senses offer different kinds of knowledge. As this project shows, making visualizations multimodal is not merely a matter of vision. It is also about imagining other bodyminds and environments. Visualization tools like Voyant and the interactive, dynamic visuals created from them are already <em>more than visual.</em> Users do not only <em>see</em> through their text, but they also move their body to use them. Voyant as an interactive visualization tool assumes certain abilities in users. In this project, I aim to examine those assumptions. I will also discuss considering users’ different bodyminds lead to imagining ways to present data interpretations in more expressive forms.</p>
-<h2 ><a id="Discussion_of_the_Process_15"></a>Discussion of the Process</h2>
+<h2 ><a id="Discussion_of_the_Process_15"></a>The Process</h2>
 <p >I used <a href="https://voyanttools.github.io/dialogica/"><em>Dialogica</em> <em>: Thinking-Through Voyant</em>(DTTV)</a> to learn some basics of computer-assisted text analysis and Voyant tools. Among their visualization tools, I selected Trends, ScatterPlot, and TermsBerry that have the most detailed discussions in their tutorials. In addition to Voyant, I used spreadsheets (Google Sheets, MS-Excel) to compile metadata and create simple trends graph, xml editors and HighCharts to create a graph with accessibility features.</p>
-<h3 ><a id="Summary_of_Work_Process_19"></a>Summary of Work Process</h3>
+<h3 ><a id="Summary_of_Work_Process_19"></a><em>Summary</em></h3>
 <ol>
 <li >Read DTTV Walkthrough 1: What is anelectronic text and how can we study it?</li>
 <li >Created a metadata spreadsheet for William Wordsworth’s works and gathered electronic texts; read DTTV Walkthrough 2: Stud ying a Text)</li>
@@ -27,40 +27,43 @@ both) and the passive voice (nature is <em>watched</em> by the viewer) describes
 <li >Created GitHub web pages to share the project.</li>
 </ol>
 <h3 ><a id="Reflection_26"></a>Reflection</h3>
-<h4 ><a id="Preparing_Texts_28"></a>Preparing Texts</h4>
-<h5 ><a id="Selection_of_electronic_texts_30"></a>Selection of electronic texts</h5>
+<h4 ><a id="Preparing_Texts_28"></a>Part1. Preparing Texts</h4>
+<h5 ><a id="Selection_of_electronic_texts_30"></a><em>Selection of electronic texts</em></h5>
 <p >Finding electronic copies was the first challenge. I tried to find scholarly editions available online, but I mostly got texts from Project Gutenberg and Wikisource. Because I cannot review the entire texts, they might include some typos and other types of errors.</p>
-<h5 ><a id="Cleaning_texts_34"></a>Cleaning texts</h5>
+<h5 ><a id="Cleaning_texts_34"></a><em>Cleaning texts</em></h5>
 <p >After compiling texts in .txt files, the next step was cleaning them by deleting all the unnecessary words (ex. copyright statements, author name, chapter titles, running headers, etc.) as well as blank spaces because they can result in false analysis.</p>
-<h5 ><a id="Creating_XML_files_of_corpora_38"></a>Creating XML files of corpora</h5>
+<h5 ><a id="Creating_XML_files_of_corpora_38"></a><em>Creating XML files of corpora</em></h5>
 <p >In Voyant, texts can be uploaded in.txt, .xls and other file formats but I opted for XML for its flexibility and adaptability. I began with making templates and filled them out (see the linked file). I referred to the xml template in the Voyant as a sample and customized it.</p>
 <ul>
 <li >Voyant demonstrates how to use spreadsheet to manage corpora as well, but as they also note, they are suitable for a collection of short pieces (Each cell in Excel can contain up to 32,767 characters, in Google Sheets, 50,000 characters).</li>
 </ul>
-<h4 ><a id="Visualization_and_sharing_44"></a>Visualization and sharing</h4>
-<h5 ><a id="Visualization_46"></a>Visualization</h5>
+<h4 ><a id="Visualization_and_sharing_44"></a>Part 2. Visualization and sharing</h4>
+<h5 ><a id="Visualization_46"></a><em>Visualization</em></h5>
 <p >I imported the xml file into Voyant and created visualizations. Voyant provides several ways to export data, tools and visualizations. The most useful feature is exporting a URL for the view ofdata and tools. Users can include the URL in their paper or embed the view in their web page so their readers themselves can interpret the data as well as examine the evidence and arguments drawn from them. The pitfall is that they can sometimes take extremely long to load and easily crash because they contain complex web structure, and they are not designed for assistive technology like keyboard navigation and screen reader. Users need to add accessibility features to the graphics when they publish them in their own works, which is very difficult if they want to publish the view as an interactive visualization that their readers can work with.</p>
 <p >With ignorance and bravery, I dared to recreate the Voyant visualizations using HighCharts, a charting library written in JavaScript that provides various tools for creating dynamic interactive visualizations with accessibility features. And as anticipated, I failed.</p>
 <p >To use HighCharts tools, I need summarized data to visualize. For Trends, Voyant allows exporting “data as tab separated values(text)” that contain x- and y- axis indexes and values which can be copy-pasted into a spreadsheet or text file. However, for TermsBerry, ScatterPlot, and other visualization tools with complex interactive elements, they do not (or rather cannot) provide summarized data.</p>
 <p >As a result, I created a sonified Trends graph with keyboard navigation and other accessibility features, but for visualizations created with TermsBerry and ScatterPlot, so far, I could not find any way to share them in more expressive forms other than adding textual descriptions.</p>
-<h5 ><a id="Sharing_56"></a>Sharing</h5>
+<h5 ><a id="Sharing_56"></a><em>Sharing</em></h5>
 <p >I used GitHub to create web pages to publish results. I need to further revise the contents and design of the website. I will not discuss in detail how to, and instead share the files.</p>
 <h2 ><a id="Conclusion_60"></a>Conclusion</h2>
 <p >In her letter to her godchild, Elizabeth Hutchinson, (14th Sept [1834?]), Dorothy Wordsworth apologizes for her “ill-penned letter” that she wrote while “l[ying] upon [her] back in bed and with uplifted knees form a desk for my paper” being unable to “sit up more than from 4 to 6 hours in the day” (203-4, <em>Letters of Dorothy Wordsworth</em>). Being confined to bed for her illness, Wordsworth adjusts her body to write, using part of her body as a desk. The letter presents a nice description of technologies involved in letter writing: letter as communication method, writing devices like pen, paper, and a desk made with her knees, and the assumption of writing to be done in a sitting position. Even in the seemingly simple task of writing a letter, she needs to configure the movement of her body for her illness and the environment (her sick bed) to use technologies built for the normative body. And her illness becomes embodied in the &quot; <em>ill</em>-penned letter.&quot; While working on this project, how the reader-user might engage with my work has been the primary consideration. As critics of universal design contend, I cannot possibly imagine all the possibilities of different bodily experiences. However, as they also argue, accessibility and universal design is a process, not a product. As Jonathan Hsy puts it, embodied variance is messy. Multimodality cannot be achieved with the aims of Universalism. With acknowledging that, making visualizations accessible to everyone should not be the ultimate goal. Rather, the process of trying to make it accessible, we are made to imagine different ways of understanding the world and maneuvering the tools, which will reveal to us normative, ableist assumptions made in digital environments and scholarship.</p>
 <p >In “Multimodality in Motion: Disability and Kairotic Spaces,” Sushil K. Oswal describe well the accessibility issues visually impaired users encounter daily on the internet:</p>
 <blockquote>
-<p >For those visually impaired who land in the category of stone blind, the screen readers offer no such consolation. Screen readers either read what they can see on the screen if it’s presented in a readable format, or they are <em>silent</em>. Even worse, if users confront the screen reader version of the monster—an unscripted version of a Java patch or a fancy Flash gig—the screen reader simply freezes the PC, requiring a hard reboot. (emphasis mine)</p>
+<p >For those visually impaired who land in the category of stone blind, the screen readers offer no such consolation. Screen readers either read what they can see on the screen if it’s presented in a readable format, or they are <em>silent</em>. Even worse, if users confront the screen reader version of the monster—an unscripted version of a Java patch or a fancy Flash gig—the screen reader simply freezes the PC, requiring a hard reboot. <span style="font-size: small;">(emphasis mine)</span></p>
 </blockquote>
 <p >Through the word “silent,” Oswal aptly presents the problem of the absence of appropriate alt-text or other formats readable to screen readers and demonstrates how digital environments are tangled with multimodality issues.<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> The silence of images expands a visual mode of experience tto the audio. I used HighCharts sonification tool to present a trends chart in sound as a way of breaking the silence. The tool has been developed as an accessibility feature, but listening to the sound of data can also provide different experience and insight than the visual.<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup> Multimodality can be a way to discovery.<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
-<h2 ><a id="Referenced_Works_70"></a>Referenced Works</h2>
-<p >
-Altschuler, Sari, and David Weimer. <a href="https://www.cambridge.org/core/journals/pmla/article/abs/texturing-the-digital-humanities-a-manifesto/557A4C568EBA82466D6FBB3425EECE32">“Texturing the Digital Humanities: A Manifesto.”</a> <em>PMLA</em>, vol. 135, no. 1, 2020, pp. 74-91. Web.<br>
-Drucker, Johanna. <em>Visualization and Interpretation: Humanistic Approaches to Display</em>. The MIT P, 2020.<br>
-El Khatib, Randa, and Shawna Ross. “A Beginner’s Guide to Using Voyant for Digital Theme Analysis.” 2022. <a href="https://doi.org/10.17613/42c8-mk80">doi.org/10.17613/42c8-mk80</a>.<br>
-Godden, Richard H. and Jonathan Hsy, “Universal Design and Its Discontents.” <em>Disrupting the Digital Humanities</em>, 2018.<br>
-Sinclair, Stéfan, and Geoffrey Rockwell. “Text Analysis and Visualization: Making Meaning Count.” <em>A New Companion to Digital Humanities</em>,2016.<br>
-Yergeau, M. Remi et al. “Multimodality in Motion: Disability and Kairotic Spaces.” Kairos: A Journal of Rhetoric, Technology, and Pedagogy, 18 (1), 2013, retrieved December 30, 2023, <a href="http://kairos.technorhetoric.net/18.1/coverweb/yergeau-et-al/index.html">kairos.technorhetoric.net/18.1/coverweb/yergeau-et-al/index.html</a>.<br>
-</p>
+<section class="Referenced_Works_70">
+	<h3 ><a id="Referenced_Works_70"></a>Referenced Works</h3>
+	<ul>
+		<li>Altschuler, Sari, and David Weimer. <a href="https://www.cambridge.org/core/journals/pmla/article/abs/texturing-the-digital-humanities-a-manifesto/557A4C568EBA82466D6FBB3425EECE32">“Texturing the Digital Humanities: A Manifesto.”</a> <em>PMLA</em>, vol. 135, no. 1, 2020, pp. 74-91. Web.</li>
+		<li>Drucker, Johanna. <em>Visualization and Interpretation: Humanistic Approaches to Display</em>. The MIT P, 2020.</li>
+		<li>El Khatib, Randa, and Shawna Ross. “A Beginner’s Guide to Using Voyant for Digital Theme Analysis.” 2022. <a href="https://doi.org/10.17613/42c8-mk80">doi.org/10.17613/42c8-mk80</a>.</li>
+		<li>Godden, Richard H. and Jonathan Hsy, “Universal Design and Its Discontents.” <em>Disrupting the Digital Humanities</em>, 2018.</li>
+		<li>Sinclair, Stéfan, and Geoffrey Rockwell. “Text Analysis and Visualization: Making Meaning Count.” <em>A New Companion to Digital Humanities</em>,2016.</li>
+		<li>Yergeau, M. Remi et al. “Multimodality in Motion: Disability and Kairotic Spaces.” Kairos: A Journal of Rhetoric, Technology, and Pedagogy, 18 (1), 2013, retrieved December 30, 2023, <a href="http://kairos.technorhetoric.net/18.1/coverweb/yergeau-et-al/index.html">kairos.technorhetoric.net/18.1/coverweb/yergeau-et-al/index.html</a>.</li>
+	</ul>
+</section>
+
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
