@@ -61,7 +61,7 @@ title: Visualizations - Seolha Lee
 </head>
 
 <h2>Accessibility and Multimodality in Visualizations: Breaking the Silence</h2>
-    <h3><a href="./projectDiscussion">Click to read about the Project</a></h3>
+    <h3><a href="./projectDiscussion">Read about the Project</a></h3>
       <p>Try text analysis and create your own visualizations of William Wordsworth's poems using the Voyant tools in the following links</br>
       <ul>
           <li><a href="https://voyant-tools.org/?corpus=8ced5328ec34296b71a3e0826069d4f5">Corpus1: William Wordsworth Prelude 1805</a></li>
@@ -72,63 +72,66 @@ title: Visualizations - Seolha Lee
     <h3>Three Visualization Samples</h3>
       <h4>Trends Graph  <button type="collapse" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#trendsgraph">Expand / Collapse</button></h4>
       <div id="trendsgraph" class="collapse">
-        <p>The trends graphs in this section display correlations between sight, hearing, and nature in the 1805 <em>Prelude</em> by tracing relative frequencies of word groups in each category.<br>
-        <strong>Keywords Used</strong>
+        <p>The trends graphs in this section display correlations between sight, hearing, and nature in the 1805 <em>Prelude</em> by tracing relative frequencies of word groups in each category.</p>
+        <section>
+          <h5><strong>Keywords Used</strong></h5>
           <ul>
             <li>nature: nature*</li>
             <li>sight: see|sees|sight*|seen|seeing|look*|gaz*|glanc*|eye</li>
             <li>hearing: hear|heard|hears|hearing*|sound*|voice|ear</li>
           </ul>
-        </p>
-          <h5>» Voyant Trends Graph</h5>
-            <figure class="voyant trends graph">
-                <img src="./resources/VoyantTrendsGraph.png" alt="A line graph showing relative frequencies across 13 books, with red, blue, and yellow lines">
-                <figcaption>Relative Frequencies of sight (red), hearing (blue), and nature (yellow) across Books 1-13, showing the changing prominence of sensory and environmental themes.</figcaption>
-            </figure>
-            <p class="long description">The trends graph shows relative frequencies (y-axis ranging from 0.000 to 0.008) across 13 books (x-axis). Three trends are tracked: 'sight' (red line), 'hearing' (blue line), and 'nature' (yellow line). 'Sight' and 'hearing' start similarly at a little above 0.002 in books 1 and 2, while 'nature' begins around 0.001 in Book 1 and rises above 0.003 in Book 2. From Book 3 onward, the 'sight' trend consistently shows higher frequencies (peaking around 0.007) compared to the other two trends that stay below 0.004, with 'nature' reaching as low as 0.001. A notable exception occurs in Book 12, where 'nature' reaches its highest point, approaching one of 'sight's' peak values. All three trends end at around 0.004 in the final book (13). The graph includes circular data points at each book marker and light gray vertical grid lines to aid in tracking frequency changes. An observation could be made from the graph that those frequency patterns suggest Wordsworth's preference for visual imagery over auditory references throughout <em>The Prelude</em>.</p>
-            <h5>» Sonified Chart</h5>
-            <p class="chart description">This graph incorporates the sonification and keyboard navigation features. Click "Play Chart" to get started and enable the keyboard navigation. This feature requires a keyboard for navigation.</p>
-            <figure class="sonifed trendsGraph">
-              <div id="top">
-              <button id="sonify">Play chart</button>
-              </div>
-              <div id="controls" role="application" tabindex="0" aria-label="Audio chart">
-              Press spacebar to play and pause chart. Use arrow keys to navigate back and forth and between lines. Use Home/End to go to the beginning and end of a series. Press Esc to silence all audio and reset the chart.
-              </div>
-              <div id="trendsGraph-container"></div>
-              <script>
-                var script = document.createElement('script');
-                script.src = '/research/digitalProject/js/trendsGraph.js';
-                document.querySelector('.trendsGraph').appendChild(script);
-              </script>
-            </figure>
+        </section>
+        <h5><strong>» Voyant Trends Graph</strong></h5>
+          <figure class="voyant trends graph">
+              <img src="./resources/VoyantTrendsGraph.png" alt="A line graph showing relative frequencies across 13 books, with red, blue, and yellow lines">
+              <figcaption>Relative Frequencies of sight (red), hearing (blue), and nature (yellow) across Books 1-13, showing the changing prominence of sensory and environmental themes.</figcaption>
+          </figure>
+          <p class="long description">The trends graph shows relative frequencies (y-axis ranging from 0.000 to 0.008) across 13 books (x-axis). Three trends are tracked: 'sight' (red line), 'hearing' (blue line), and 'nature' (yellow line). 'Sight' and 'hearing' start similarly at a little above 0.002 in books 1 and 2, while 'nature' begins around 0.001 in Book 1 and rises above 0.003 in Book 2. From Book 3 onward, the 'sight' trend consistently shows higher frequencies (peaking around 0.007) compared to the other two trends that stay below 0.004, with 'nature' reaching as low as 0.001. A notable exception occurs in Book 12, where 'nature' reaches its highest point, approaching one of 'sight's' peak values. All three trends end at around 0.004 in the final book (13). The graph includes circular data points at each book marker and light gray vertical grid lines to aid in tracking frequency changes. An observation could be made from the graph that those frequency patterns suggest Wordsworth's preference for visual imagery over auditory references throughout <em>The Prelude</em>.</p>
+          <h5></strong>» Sonified Chart</strong></h5>
+          <p class="chart description">This graph incorporates the sonification and keyboard navigation features. Click "Play Chart" to get started and enable the keyboard navigation. This feature requires a keyboard for navigation.</p>
+          <figure class="sonifed trendsGraph">
+            <div id="top">
+            <button id="sonify">Play chart</button>
+            </div>
+            <div id="controls" role="application" tabindex="0" aria-label="Audio chart">
+            Press spacebar to play and pause chart. Use arrow keys to navigate back and forth and between lines. Use Home/End to go to the beginning and end of a series. Press Esc to silence all audio and reset the chart.
+            </div>
+            <div id="trendsGraph-container"></div>
+            <script>
+              var script = document.createElement('script');
+              script.src = '/research/digitalProject/js/trendsGraph.js';
+              document.querySelector('.trendsGraph').appendChild(script);
+            </script>
+          </figure>
       </div>
 
       <h4>TermsBerry  <button type="collapse" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#termsberry">Expand / Collapse</button></h4>
       <div id="termsberry" class="collapse">
-        <p>TermsBerry Visualization of the Wordsworth Collection (Corpus 2)<br>
-        <strong>Options Used</strong><br>
+        <p>TermsBerry Visualization of the Wordsworth Collection (Corpus 2)<br></p>
+        <section>
+          <h5><strong>Options Used</strong><br></h5>
           <ul>
             <li>Strategy: Top Terms (default)</li>
             <li>Terms: 75 (default)</li>
             <li>Context: 5</li>
             <li>Scaling: 3 (default)</li>
           </ul>
-        </p>
+        </section>
         <figure class="termsBerry">
           <img src="./resources/VoyantTermsBerry.png" alt="A TermsBerry visualization of word collocates in a circular pattern with highlighted word 'hand.'">
           <figcaption>Collocates for the word "hand" in Wordsworth's poems. The word hidden under the tooltip box is "beneath."</figcaption>
         </figure>
         <p class="chart description">The image depicts a TermsBerry visualization of word frequency analysis, featuring a dense arrangement of colored circles forming a larger circular pattern. At the center, a teal-highlighted circle represents the selected word "hand," which appears 136 times across eight books analyzed in Voyant. A tooltip box displays this information. Surrounding the central word are circles in various shades of pink indicating collocates of "hand," with numbers showing their frequency of co-occurrence (ranging from 1 to 6). Words like "self," "happy," and "delight" are among these collocates. Gray circles represent words with no collocate instances. The visualization shows "hand" and "voice" appearing together six times, potentially suggesting Wordsworth's multisensory poetic approach combining tactile and auditory elements, though this limited number of instances may not be statistically significant enough to draw definitive conclusions.<br>
-        <a href = "https://voyant-tools.org/?corpus=db914e08a59f7c9cb222f77015c4d365&view=TermsBerry">Click to open an interactive version in Voyant </a></p>
+        <a href = "https://voyant-tools.org/?corpus=db914e08a59f7c9cb222f77015c4d365&view=TermsBerry">Open an interactive view in Voyant </a></p>
       </div>
     
-    <h4>ScatterPlot  <button type="collapse" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#scatterplot">Expand / Collapse</button></h4>
-    <div id="scatterplot" class="collapse">
-      <p>TermsBerry Visualization of the Wordsworth Collection (Corpus 2)</p>
-      <figure class="scatterPlot">
-        <img src="./resources/VoyantScatterPlot.png" alt="A scatterplot with labeled circles of different sizes and colors, displaying data across three dimensions">
-        <figcaption>Associations between various frequent words and books.</figcaption>
-      </figure>
-      <p class="chart description">The image shows a three-dimensional scatterplot with Dimension 1 on the X-axis (-1.00 to 0.50), Dimension 2 on the Y-axis (-0.50 to 0.50), and Dimension 3 represented by fill color. Each data point appears as a circle of varying size and color, labeled with words or literary titles (such as 'Michael 1800,' 'The Prelude 1805,' and 'The Recluse 1888'). Labels appear in different colors (black, magenta, pink, blue, or green). Point proximity indicates similarity or relevance between data elements.</p>
-    </div>
+      <h4>ScatterPlot  <button type="collapse" class="btn btn-success btn-sm" data-toggle="collapse" data-target="#scatterplot">Expand / Collapse</button></h4>
+      <div id="scatterplot" class="collapse">
+        <p>TermsBerry Visualization of the Wordsworth Collection (Corpus 2)</p>
+        <figure class="scatterPlot">
+          <img src="./resources/VoyantScatterPlot.png" alt="A scatterplot with labeled circles of different sizes and colors, displaying data across three dimensions" style="width: 600px">
+          <figcaption>Associations between various frequent words and books. <a href="./resources/VoyantScatterPlot.png">Open the image in a new tab for a larger view.</a></figcaption>
+        </figure>
+        <p class="chart description">The image shows a three-dimensional scatterplot with Dimension 1 on the X-axis (-1.00 to 0.50), Dimension 2 on the Y-axis (-0.50 to 0.50), and Dimension 3 represented by fill color. Each data point appears as a circle of varying size and color, labeled with words or literary titles (such as 'Michael 1800,' 'The Prelude 1805,' and 'The Recluse 1888'). Labels appear in different colors (black, magenta, pink, blue, or green). Point proximity indicates similarity or relevance between data elements.</p>
+        <a href = "https://voyant-tools.org/?corpus=db914e08a59f7c9cb222f77015c4d365&limit=58&view=ScatterPlot">Open an interactive view in Voyant </a></p>
+      </div>
